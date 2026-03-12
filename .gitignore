@@ -3,4 +3,3 @@ venv/
 *.db
 *.pyc
 */__pycache__/
-scraper.log

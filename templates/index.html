@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Search Engine</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/index.css">
+        <script src="/static/js/index.js" async defer></script>
+    </head>
+    <body>
+        <div id="search-header">
+            <form action="#">
+                <input id="search-input" type="search" placeholder=" Enter search query here..." autofocus>
+                <input id="submit-btn" type="submit" value="🔍">
+            </form>
+        </div>
+        <div id="results-container">
+            <!-- Example search result format -->
+            <div class="result"> <!-- Add a listener for a click -->
+                <h2 class="title">Creators</h2>
+                <a class="link" href="http://localhost:5000/creators">Meet the Creators</a>
+            </div>
+            <div class="result"> 
+                <h2 class="title">Dashboard</h2>
+                <a class="link" href="http://localhost:5000/dashboard">Dashboard</a>
+            </div>
+        </div>
+        
+    </body>
+</html>
