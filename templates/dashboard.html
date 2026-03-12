@@ -270,7 +270,7 @@ th {
 
         <!-- Search Speed Metrics -->
         <div class="card metric col-3 row-1">
-            <div class="metric-label">Search speed - "Steve Ranis"</div>
+            <div class="metric-label">Search speed - "Something here"</div>
             <div class="metric-value">0.25s</div>
         </div>
 
@@ -294,52 +294,52 @@ th {
 </div>
 
 <script>
-const statusCounts = {{ status_counts | safe }};
-const scrapesOverTime = {{ scrapes_over_time | safe }};
-const cumScrapesOverTime = {{ cumulative_scrapes_per_day | safe }};
+    const statusCounts = {{ status_counts | safe }};
+    const scrapesOverTime = {{ scrapes_over_time | safe }};
+    const cumScrapesOverTime = {{ cumulative_scrapes_per_day | safe }};
 
-const labels = statusCounts.map(s => s.status);
-const values = statusCounts.map(s => s.count);
+    const labels = statusCounts.map(s => s.status);
+    const values = statusCounts.map(s => s.count);
 
-new Chart(document.getElementById("pie_scraped_vs_blocked"), {
-    type: "pie",
-    data: { labels, datasets: [{ data: values }] }
-});
+    new Chart(document.getElementById("pie_scraped_vs_blocked"), {
+        type: "pie",
+        data: { labels, datasets: [{ data: values }] }
+    });
 
-new Chart(document.getElementById("bar_scraped_vs_blocked"), {
-    type: "bar",
-    data: { labels, datasets: [{ label: "Count", data: values }] }
-});
+    new Chart(document.getElementById("bar_scraped_vs_blocked"), {
+        type: "bar",
+        data: { labels, datasets: [{ label: "Count", data: values }] }
+    });
 
-new Chart(document.getElementById("scrapes_per_minute"), {
-    type: "line",
-    data: {
-        labels: scrapesOverTime.map(d => d.minute),
-        datasets: [{
-            label: "Scrapes / Day",
-            data: scrapesOverTime.map(d => d.count),
-            tension: 0.3
-        }]
-    }
-});
+    new Chart(document.getElementById("scrapes_per_minute"), {
+        type: "line",
+        data: {
+            labels: scrapesOverTime.map(d => d.minute),
+            datasets: [{
+                label: "Scrapes / Day",
+                data: scrapesOverTime.map(d => d.count),
+                tension: 0.3
+            }]
+        }
+    });
 
-new Chart(document.getElementById("cumulative_scrapes_per_day"), {
-    type: "line",
-    data: {
-        labels: cumScrapesOverTime.map(w => w.day),
-        datasets: [{
-            label: "Scrapes / Day",
-            data: cumScrapesOverTime.map(w => w.cumulative_scrapes),
-            tension: 0.0
-        }]
-    }
-});
+    new Chart(document.getElementById("cumulative_scrapes_per_day"), {
+        type: "line",
+        data: {
+            labels: cumScrapesOverTime.map(w => w.day),
+            datasets: [{
+                label: "Scrapes / Day",
+                data: cumScrapesOverTime.map(w => w.cumulative_scrapes),
+                tension: 0.0
+            }]
+        }
+    });
 
 
-// Reload every minute
-setInterval(() => {
-    location.reload();
-}, 600000);
+    // Reload every minute
+    setInterval(() => {
+        location.reload();
+    }, 60000);
 
 </script>
 </body>

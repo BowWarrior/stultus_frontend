@@ -6,7 +6,8 @@
         <title>Search Engine</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="/static/css/index.css">
+        <script src="/static/js/index.js" async defer></script>
     </head>
     <body>
         <div id="search-header">
@@ -18,16 +19,14 @@
         <div id="results-container">
             <!-- Example search result format -->
             <div class="result"> <!-- Add a listener for a click -->
-                <h2 class="title">Jack Hagen</h2>
-                <p class="link">https://hagen.rip/</p>
-                <p class="description">About Me I'm Jack Hagen. I'm a student, double majoring in Computer Science and Political Science.</p>
+                <h2 class="title">Creators</h2>
+                <a class="link" href="http://localhost:5000/creators">Meet the Creators</a>
             </div>
             <div class="result"> 
-                <h2 class="title">Google</h2>
-                <p class="link">https://google.com</p>
-                <p class="description">The #2 search engine for the world.</p>
+                <h2 class="title">Dashboard</h2>
+                <a class="link" href="http://localhost:5000/dashboard">Dashboard</a>
             </div>
         </div>
-        <script src="" async defer></script>
+        
     </body>
 </html>

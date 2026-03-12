@@ -10,7 +10,6 @@ Graphs:
 - Number of urls in the database
 - Number of domains in the database
 - 
-
 """
 
 from flask import Flask, render_template
@@ -186,6 +185,10 @@ def dashboard():
         last_10_scraped=real_last_10_scraped,
         cumulative_scrapes_per_day=json.dumps(cumulative_scrapes_per_day, default=str),
     )
+
+@app.route("/creators")
+def creators():
+    return render_template("creators.html")
 
 
 @app.route("/")
